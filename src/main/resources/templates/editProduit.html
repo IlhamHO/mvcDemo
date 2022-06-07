@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Saisie d'un produit</div>
+        <div class="panel-body">
+            <form th:action="@{save}" method="post">
+                <div class="form-group">
+                    <label class="control-label">ID:</label>
+                    <input class="form-control" type="text" name="id"
+                           th:value="${produit.id}"/>
+                    <span th:errors="${produit.id}"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Désignation:</label>
+                    <input class="form-control" type="text" name="designation"
+                           th:value="${produit.designation}"/>
+                    <span th:errors="${produit.designation}"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Prix:</label>
+                    <input class="form-control" type="text" name="prix"
+                           th:value="${produit.prix}"/>
+                    <span th:errors="${produit.prix}"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Quantité:</label>
+                    <input class="form-control" type="text" name="quantite"
+                           th:value="${produit.quantite}"/>
+                    <span th:errors="${produit.quantite}"></span>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
